@@ -1,2 +1,2 @@
 # Grade-System
-<img src="grade.png" alt=""/>
+<img src="grade.PNG" alt=""/>
