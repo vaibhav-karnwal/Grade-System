@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade_Calculator</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="row">
+            <div id="content" class="content column-40">
+                <strong>STUDENTS</strong><br> <strong>GRADE</strong><br> 
+				<strong>CALCY</strong> 
+            </div>
+                
+            <form action="#" class="column-60">
+                <input type="textbox"  id="math" class="t1" placeholder="MATH">
+                <input type="text"  id="physics" class="t1" placeholder="PHYSICS">
+                <input type="text" id="chemistry" class="t1" placeholder="CHEMISTRY">
+                <input type="text" id="bio1" class="t1" placeholder="BIO">
+                <input type="text" id="english1" class="t1" placeholder="ENGLISH">
+                <button id="but1" class="btn" onclick="calcy()">Calculate</button>
+            </form>
+            <div id="output"> RESULT</div>
+			<div class="Result">
+			<p id="Result" ></p>
+			</div>
+    </div> 
+	<script>
+	const calcy = () =>{
+    let maths=document.getElementById('math').value;
+    let physics=document.getElementById('physics').value;
+    let chemistry=document.getElementById('chemistry').value;
+    let bio1=document.getElementById('bio1').value;
+    let english1=document.getElementById('english1').value;
+	let totalGrades=parseFloat(maths)+parseFloat(physics)+parseFloat(chemistry)+parseFloat(bio1)+parseFloat(english1);
+    let grades="";
+	let percentage=(totalGrades/500)*100;
+	if(percentage<=100 && percentage >= 80)
+		{grades='A';}
+	else if(percentage<=79 && percentage >= 60)
+		{grades='B';}
+	else if(percentage<60 && percentage >= 40)
+		{grades='C';}
+	else 
+		{grades='F';}
+
+	let result="";
+	if(grades=='F')
+		{result="Fail";}
+	else
+		{result="Pass";}
+	document.getElementById('Result').innerHTML=`Out Of 500 Your Total is ${totalGrades} and Percentage is ${percentage}%. <br> Your Grade is ${grades}. You are ${result}`;
+}
+    
+	</script>
+</body>
+</html>
